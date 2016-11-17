@@ -1,8 +1,14 @@
 # 概要
 
-mecabaasで提供されるAPIにアクセスするためのクライアントライブラリです。
-MeCabおよびmecab-ipadic-NElogdで日本テキストを形態素解析し、その結果をJSONフォーマットで受け取ることができます。
-リモートのAPIを通じて解析をおこなうためこのクライアントライブラリをインストールするnode.jsの実行環境にはMeCabをインストールする必要がありません。
+[MeCab](http://taku910.github.io/mecab/)および[mecab-ipadic-NEologd](https://github.com/neologd/mecab-ipadic-neologd/blob/master/README.ja.md)による日本語テキストの形態素解析をクラウドサービスとして利用するためのライブラリです。
+
+mecab-ipadic-NEologdを辞書として利用した形態素解析は素晴らしいパフォーマンスを発揮し、その解析結果は極めて有用です。
+一方、MeCabやmecab-ipadic-NEologdは一般的なnode.jsのPaaSの実行環境では組み込まれておらず、利用するには独自に実行環境をコンパイルする必要があります。
+このコンパイル作業はPaaS利用者にとってはできれば避けたい作業であり、特にmecab-ipadic-NEologdはコンパイルに相当量の空きメモリを必要とするため、コンパイル自体が難しかったりします。
+
+このmecabaas-clientはリモートのAPIを通じて解析をおこなうため、個々のnode.js実行環境にはMeCabおよびmecab-ipadic-NEologdをインストールする必要がありません。開発者はすぐにテキストを解析することができます。
+
+*ただし、このライブラリが利用しているクラウドサービスは永続的に稼働している保証はなく、主にテスト目的での利用を想定しているため本番環境での利用には適しません。また、mecab-ipadic-NEologdは毎月データを更新されるという方針ですが、このライブラリが利用しているサービスではそんなに頻繁にデータは更新されない予定です。ご注意ください。*
 
 # インストール
 
@@ -35,3 +41,8 @@ mecab.wakachi('メロンパンを食べました。')
     }
 );
 ```
+
+# ライセンスと著作権
+
+- mecabaas-clientはMITライセンスで公開しています。
+- mecab-ipadic-NEologdは[Toshinori Sato氏](https://github.com/overlast)の著作物です。
