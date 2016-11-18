@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nkjm/mecabaas-client.svg?branch=master)](https://travis-ci.org/nkjm/mecabaas-client)
+
 # 概要
 
 [MeCab](http://taku910.github.io/mecab/)および[mecab-ipadic-NEologd](https://github.com/neologd/mecab-ipadic-neologd/blob/master/README.ja.md)による日本語テキストの形態素解析をクラウドサービスとして利用するためのライブラリです。
