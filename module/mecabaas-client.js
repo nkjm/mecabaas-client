@@ -2,7 +2,7 @@
 
 const request = require('request');
 const promise = require('bluebird');
-const apiBase = 'http://mecab.oracle.tokyo/api';
+const apiBase = 'http://mecab.nkjmkzk.net/api';
 
 module.exports = class mecabaasClient {
 
